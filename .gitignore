@@ -1,0 +1,15 @@
+cat > .gitignore << 'EOF'
+# Maven
+target/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Sistema operacional
+.DS_Store
+EOF
