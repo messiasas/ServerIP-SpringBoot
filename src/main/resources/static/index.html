@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud6 - Monitor ECHO-6</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M6 18h11a4 4 0 0 0 .4-7.98A6 6 0 0 0 6.2 8.1 4.5 4.5 0 0 0 6 18Z"/>
+      </svg>
+      <span>Cloud6 <small>ECHO-6</small></span>
+    </div>
+    <div class="status">
+      <span id="wsLed" class="led led-off"></span>
+      <span id="wsLabel">conectando...</span>
+      <span class="divider">|</span>
+      <span>total: <strong id="totalConn">0</strong></span>
+      <span class="divider">|</span>
+      <span>ativas: <strong id="activeConn">0</strong></span>
+      <span class="divider">|</span>
+      <span id="clock">--:--:--</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h2>Dispositivos</h2>
+      <div id="deviceList" class="device-list">
+        <p class="empty">Nenhum dispositivo registrado ainda.</p>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div class="toolbar">
+        <input id="filterInput" type="text" placeholder="Filtrar por IP..." />
+        <span id="rowCount" class="row-count">0 eventos</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Hora</th>
+              <th>Tipo</th>
+              <th>IP</th>
+              <th>Porta</th>
+              <th>Protocolo</th>
+              <th>Dados</th>
+            </tr>
+          </thead>
+          <tbody id="eventsBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
